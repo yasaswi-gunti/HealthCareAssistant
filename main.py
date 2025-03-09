@@ -11,7 +11,7 @@ LANGFLOW_URL = os.getenv("LANGFLOW_URL", "http://localhost:7860")
 async def analyze_healthcare_data(data: dict):
     try:
         # Send input data to Langflow
-        response = requests.post(f"{LANGFLOW_URL}/api/v1/chain", json=data)
+        response = requests.post(f"{LANGFLOW_URL}", json=data)
         response.raise_for_status()  # Raise exception for HTTP errors
         result = response.json()
         
